@@ -1,0 +1,110 @@
+@import "../../global.scss";
+
+
+.topbar{
+    width: 100%;
+    height: 70px;
+    background-color: whitesmoke;
+    color: $mainColor;
+    position: fixed;
+    z-index: 3;
+    overflow:hidden;
+    transition: all 1s ease;
+
+
+    .wrapper{
+        padding: 5px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+
+        .left{
+            align-items: center;
+            display: flex;
+            overflow: hidden;
+           
+            .logo{
+                font-size: 40px;
+                font-weight:700;
+                font-family: 'Leckerli One', cursive;
+                text-decoration: none;
+                color: inherit;
+                
+                .logoMoon{
+                    transform: scaleX(-1)
+                            rotate(20deg)
+                            translate(3px,1px);
+                    
+                }
+            }
+            .logor{
+                font-size: 40px;
+                font-weight:700;
+                font-family: 'Galada', cursive;
+                text-decoration: none;
+                color: inherit;
+                transform: translate(0px,5px);
+            }
+
+            .itemContainer{
+                display:flex;
+                align-items: center;
+                margin-left: 30px;
+
+                .icon{
+                    font-size: 18px;
+                    margin-left:30px;
+                    margin-right: 10px;
+                }
+                span{
+                    font-size: 16px;
+                    font-weight: 400;
+
+                }
+            }
+        }
+        .right{
+
+            .hamburger{
+                width: 33px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                overflow:hidden;
+
+                span{
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left;
+                    transition: all 2s ease;
+                }
+            }
+        }
+    }
+
+    &.active{
+        background-color: $mainColor;
+        color:white;
+
+        .hamburger{
+        overflow:hidden;
+            span{
+                &:first-child{
+                    background-color: white;
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: white;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
